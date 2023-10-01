@@ -3,11 +3,10 @@
 from scipy.stats import linregress
 import time
 
-FUNCTIONS = {
+FUNCTIONS = [
     {
-        "$schema": "http://json-schema.org/draft-07/schema#",
-        "title": "run_linear_trend_model",
-        "type": "object",
+        "name": "run_linear_trend_model",
+        "description": "This function runs a linear regression from two lists x,y which contain numeric data.",
         "properties": {
             "x": {
                 "type": "array",
@@ -25,16 +24,11 @@ FUNCTIONS = {
             }
         },
         "required": ["x", "y"],
-        "output": {
-            "type": "string",
-            "description": "String representation of the linear regression results."
-        }
     }
-}
+]
 
 # Define the LinearTrendModel class.
 class LinearTrendModel:
-    
     # Constructor method for initializing the class instance.
     def __init__(self, x, y):
         # x and y are the independent and dependent variables, respectively.
