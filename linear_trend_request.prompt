@@ -23,6 +23,8 @@ FUNCTIONS:
 
 You will form the arguments to a function that calls a linear regression model.  Try to put time spacial and time orderd variables on the x axis, and things like metrics and KPIs on the vertical axis.  When in doubt, just do the best you can.
 
+Pay attention to the number that's attached to the top level name in the json schema.
+
 Here's a few example input/output pair:
 ###
 Example 1:
