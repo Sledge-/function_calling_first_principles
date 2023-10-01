@@ -1,7 +1,6 @@
 import os
 from typing import Optional
 
-# External Dependencies:
 import boto3
 from botocore.config import Config
 
