@@ -34,8 +34,6 @@ def extract_json_from_text(text):
 
 
 class FunctionParser:
-    
-    
     def __init__(self, external_funcs):
         self.external_funcs = external_funcs
 
@@ -92,7 +90,7 @@ if __name__ == "__main__":
 
 
     #: Example 2
-    # Sample output from the language model
+    # Sample output from the language model with leading text.
     sample_output = """
 Here is the function call to run a linear regression on the data provided:
 
@@ -115,3 +113,33 @@ Here is the function call to run a linear regression on the data provided:
     result = parser.parse_and_execute(sample_output)
     print(result)
 
+
+        #: Example 3
+    # Another example with different format.
+    sample_output = """
+Here is more dummy data with a new format.
+
+Will the parser be able to do to it?
+
+{
+  "function_call": {
+    "name": "dummy_function2",
+    "parameters": {
+      "id": "Karl",
+      "date": "11/20/1999",
+      "location": "Earth"
+    }
+  }
+}
+"""
+    print(f"sample_output: {sample_output}")
+    def dummy_function2(id, date, location):
+        print(f"{id}, {date}, {location}")
+        return True
+
+    # Initialize the parser with the function
+    parser = FunctionParser({'dummy_function2': dummy_function2})
+
+    # Parse and execute
+    result = parser.parse_and_execute(sample_output)
+    print(result)

@@ -1,0 +1,8 @@
+
+| Location                       | Distance from Center (miles)| Street               | Monthly Revenue ($)| Avg Price per Hot Dog ($)    | Monthly Customers Count | Top Selling Side Item | Employee Count | Customer Satisfaction (%) | Average Wait Time (minutes) |
+| Broadway Avenue, Manhattan     | 0.5                         | Broadway Avenue      | 15,000             | 5                            | 3,000                   | Fries                 | 10             | 80                        | 15                          |
+| West Village, Manhattan        | 1.5                         | Bleecker Street      | 12,500             | 5.5                          | 2,273                   | Soda                  | 8              | 85                        | 10                          |
+| Williamsburg, Brooklyn         | 3                           | Bedford Avenue       | 10,000             | 6                            | 1,667                   | Cheese Sticks         | 7              | 88                        | 8                           |
+| Astoria, Queens                | 4.2                         | Ditmars Boulevard    | 7,500              | 5.5                          | 1,364                   | Onion Rings           | 6              | 90                        | 6                           |
+| Bay Ridge, Brooklyn            | 6                           | 3rd Avenue           | 6,000              | 5                            | 1,200                   | Pretzels              | 5              | 92                        | 5                           |
+

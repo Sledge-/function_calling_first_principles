@@ -29,7 +29,9 @@ FUNCTIONS = [
 
 # Define the LinearTrendModel class.
 class LinearTrendModel:
-    # Constructor method for initializing the class instance.
+    '''
+    Just a regular old linear regression model.
+    '''
     def __init__(self, x, y):
         # x and y are the independent and dependent variables, respectively.
         self.x = x
