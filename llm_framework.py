@@ -26,7 +26,7 @@ class LLMFramework:
     
     def run(self):
         iterations = 0
-        max_iterations = 10  # or any number you deem appropriate
+        max_iterations = 20  # or any number you deem appropriate
 
         while iterations < max_iterations:
             print(f"iterations: {iterations}")
@@ -63,7 +63,7 @@ if __name__ == "__main__":
     #: Here's our prompt that we'll use to drive the language model
     linear_trend_agent_prompt = load_text_file('linear_trend_model_agent.prompt')
 
-    #: Here's a mock article excerpt that I generated to showcase this technology.
+    #: Here's some mock sales KPI data generated for our hypothetical hot dog stand.
     city_dogs_stats =  load_text_file('city_dogs_stats.txt')
 
     #: Establish the Prompt template from the text file.

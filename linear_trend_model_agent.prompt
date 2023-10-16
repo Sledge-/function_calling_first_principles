@@ -19,7 +19,7 @@ When the need arises to form function arguments, do so based on the specificatio
 
 Do not try to answer questions about the numbers directly, use the provided tools.  The tools are specified using a json schema format, which defines how the arguments to the function are to be formed.  You are to make ONLY ONE function call at a time.
 
-Your ultimate goal is to fit a linear model that find a positive trend.  In order to do this, you will need to analyze the data using linear regression and assess the results.  When you provide me with a function call, I will run the fuction, and return the results to you.  If you determine that the trend obtained is not positive, then you will again form function arguments using a data column that you haven't tried yet. We will continue in this way, you calling functions, analyzing the trend, and submitting new function calls to me until we have tested everything or found a positive trend.  It may take multiple iterations of this process to find the right trend.
+Your ultimate goal is to fit a linear model that find a positive trend.  In order to do this, you will need to analyze the data using linear regression and assess the results.  When you provide me with a function call, I will run the fuction, and return the results to you.  If you determine that the trend obtained is not positive, then you will again form function arguments using a data column that you haven't tried yet. We will continue in this way, you calling functions, analyzing the trend, and submitting new function calls to me until we have tested everything or found a positive trend.  It may take many iterations of this process to find the right trend.
 
 Here are the json schema definitions for the functions provided to you.
 FUNCTIONS:
@@ -27,11 +27,11 @@ FUNCTIONS:
 <<FUNCTIONS>>
 ###
 
-When forming the arguments to a function that calls a linear regression model, put spatial and time orderd variables on the x axis, and things like metrics or KPIs on the y axis.  When in doubt, just do the best you can.
+When forming the arguments to a function that calls a linear regression model, put spatial and time orderd variables on the x axis, and things like metrics or KPIs on the y axis. If the column looks like it's categorical or nominal just ignore it.  We want to focus on numeric columns only. Also, describe which two columns you're forming function calls for as shown in the examples. When in doubt, just do the best you can.
 
 Here's a few example function call input/output pairs:
 ###
-Example 1:
+H:
 | Name         | Metric1 | Metric2  | Value |
 | Alice        | 12      | 35       | 45    |
 | Bob          | 15      | 40       | 48    |
@@ -39,7 +39,8 @@ Example 1:
 | David        | 14      | 37       | 44    |
 | Eve          | 13      | 36       | 46    |
 
-Assistant:
+A:
+Trying Metric1 vs. Metric2
 {
   "function_call": {
     "name": "run_linear_trend_model", 
@@ -50,7 +51,7 @@ Assistant:
   }
 }
 
-Example 2:
+H:
 | Name         | Metric1 | Metric2  | Value |
 | Alice        | 12      | 35       | 45    |
 | Bob          | 15      | 40       | 48    |
@@ -58,7 +59,8 @@ Example 2:
 | David        | 14      | 37       | 44    |
 | Eve          | 13      | 36       | 46    |
 
-Assistant:
+A:
+Trying Metric1 vs. Value
 {
   "function_call": {
     "name": "run_linear_trend_model", 
@@ -77,7 +79,7 @@ Ok now here's the actual user's data:
 <<user_data>>
 ###
 
-Next, generate a function call that computes a linear regression, as defined in the FUNCTIONS, and prepare to recieve it's result. If the result shows a negative trend, it's fine to say that, but then immediately form a new function call using data from the user's table that hasn't been tried yet.
+Next, generate a function call that computes a linear regression, as defined in the FUNCTIONS, and prepare to recieve it's result. If the result shows a negative trend, it's fine to say that, but then immediately form a new function call using data from the user's table that hasn't been tried yet.  Keep going until the positive trend is found, and stop making function calls as soon as you see it.
 
 Assistant:
 

@@ -2,6 +2,7 @@
 # This function performs simple linear regression, a method used to describe a linear relationship between two variables.
 from scipy.stats import linregress
 import time
+from termcolor import colored
 
 FUNCTIONS = [
     {
@@ -81,6 +82,7 @@ def run_linear_trend_model(x, y):
     Returns:
     - String representation of the linear regression results.
     """
+    print(colored('Calling run_linear_trend_model', 'blue'))
     # Creating an instance of the LinearTrendModel class with the provided data.
     model = LinearTrendModel(x, y)
     
@@ -115,4 +117,10 @@ if __name__ == "__main__":
     x_sample = [1, 2, 3, 4, 5]
     y_sample = [2, 4, 6, 8, 10]
     output = run_linear_trend_model(x_sample, y_sample)
-    output
+    print(f"output: {output}")
+
+
+    x_sample = [3000, 2273, 1667, 1364, 1200]
+    y_sample = [15000, 12500, 10000, 7500, 6000] 
+    output = run_linear_trend_model(x_sample, y_sample)
+    print(f"output: {output}")

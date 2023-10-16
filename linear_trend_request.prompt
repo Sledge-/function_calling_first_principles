@@ -27,10 +27,10 @@ Pay attention to the number that's attached to the top level name in the json sc
 
 Here's a few example input/output pair:
 ###
-Example 1:
+H:
 There was once a fox that ran 20 miles carrying 15 pounds.  There was a wold that ran 25 miles carrying 30 pounds.  A turtle loped along slowly, hauling 50 pounds a totla of 45 miles.  A dog happily carried 20 pounds for 20 miles.
 
-Assistant:
+A:
 {
   "function_call": {
     "name": "run_linear_trend_model", 
@@ -41,10 +41,10 @@ Assistant:
   }
 }
 
-Example 2:
+H:
 The red box is 20 cubic feet in volume and weighed 20 pounds.  The blue box is 30 cubic feet in volume and weighed 15 pounds.  The purple box was 50 cubic feet in volume and weighed 12 pounds.  A green box was 5 cubic feet in volume and weighed 35 pounds.
 
-Assistant:
+A:
 {
   "function_call": {
     "name": "run_linear_trend_model", 
