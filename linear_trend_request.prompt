@@ -21,7 +21,7 @@ FUNCTIONS:
 <<FUNCTIONS>>
 ###
 
-You will form the arguments to a function that calls a linear regression model.  Try to put time spacial and time orderd variables on the x axis, and things like metrics and KPIs on the vertical axis.  When in doubt, just do the best you can.
+You will form the arguments for a function that calls a linear regression model. Try to place spatial and time-ordered variables on the x-axis, and items like metrics and KPIs on the vertical axis. When in doubt, do the best you can.
 
 Pay attention to the number that's attached to the top level name in the json schema.
 
